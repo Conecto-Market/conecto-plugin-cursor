@@ -40,7 +40,7 @@ The reply's `error` and `message` say why and how to fix it. Every code: `https:
 - `key_scope`, or a tool missing from your list: its area wasn't ticked. The person signs out of Conecto in Customize and connects again, ticking it.
 - `insufficient_balance`, `payment_required`, `payment_required_for_outbound` or `purchased_credit_required`: a person adds credit on the account page, `https://conecto.chat/account` (from $5.00). Then call again.
 - `daily_budget_reached` or `monthly_ceiling_reached`: the owner raises the limit on the account page. Otherwise the daily budget starts again at midnight UTC, and the monthly ceiling on the 1st.
-- `approval_required`: the owner holds this tool for a person's approval, and the request went to the approvers the reply names. Tell the person and wait. Calling again while it waits returns the same request. Once it's approved, run the call once from the terminal with the approval, because Cursor's MCP calls can't carry it: `npx @conecto-chat/cli@latest run <tool> -i '<the same arguments as JSON>' --approval <approval_id>` (`-f <file>` takes the arguments from a file). The CLI runs on a key for this account: the owner makes one on the account page (AI apps, Make a key), and the person adds it in their own terminal with `npx @conecto-chat/cli@latest keys add`, so the key stays out of this chat.
+- `approval_required`: the owner holds this tool for a person's approval, and the request went to the approvers the reply names. Tell the person and wait. Calling again while it waits returns the same request. Once they say it's approved, call again with exactly the same arguments: that one call runs. An approval lasts 72 hours after the answer.
 - `owner_required`: only the owner does this, on the account page.
 
 ## Money

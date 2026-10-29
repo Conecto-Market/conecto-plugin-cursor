@@ -66,7 +66,7 @@ The skill tells the agent to ask you before anything that reaches people outside
 | Cloud Agents can't reach Conecto | Cloud Agents keep their own sign-in. In Customize, sign in on the server's **Cloud** row. |
 | Your company blocks the server | On Enterprise plans, an admin allows `https://api.conecto.chat/v1/mcp` in the MCP allowlist. |
 | A call answers `insufficient_balance` or another `402` | Add credit on the account page, then ask again. |
-| A call answers `approval_required` | Your account holds that tool for a person's approval. The skill walks the agent through it. |
+| A call answers `approval_required` | Your account holds that tool for a person's approval. Once they approve, ask again: the agent calls again with the same arguments, and that one call runs. |
 
 Every error code and its fix: [conecto.chat/docs/errors.md](https://conecto.chat/docs/errors.md).
 
