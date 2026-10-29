@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "conecto": {
+      "url": "https://api.conecto.chat/v1/mcp"
+    }
+  }
+}

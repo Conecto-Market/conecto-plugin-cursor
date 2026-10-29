@@ -1,0 +1,27 @@
+{
+  "name": "conecto",
+  "displayName": "Conecto",
+  "version": "1.0.0",
+  "description": "Run a small business from Cursor: CRM, email inboxes, invoicing and bookkeeping, help desk, booking calendar, e-signatures, purchasing and HR as MCP tools. Sign in with Conecto, pay per call, no subscription.",
+  "author": {
+    "name": "Conecto",
+    "email": "hello@conecto.chat"
+  },
+  "homepage": "https://conecto.chat",
+  "repository": "https://github.com/Conecto-Market/conecto-plugin-cursor",
+  "license": "MIT",
+  "keywords": [
+    "crm",
+    "email",
+    "invoicing",
+    "bookkeeping",
+    "accounting",
+    "help-desk",
+    "booking",
+    "e-signature",
+    "hr",
+    "small-business",
+    "mcp"
+  ],
+  "logo": "assets/logo.png"
+}
