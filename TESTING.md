@@ -19,7 +19,7 @@ Signing in takes a Conecto account. Reviewers use a sample business instead of m
 1. Start the sign-in:
    - **Grok Bot:** open Conecto in **Connect apps** and choose **Authenticate**.
    - **Cursor:** in **Customize**, find Conecto's MCP server and sign in.
-2. Conecto's sign-in page opens in your browser. Under **Reviewing Conecto for the Cursor Marketplace or Grok Bot?**, enter the review code from the submission and choose **Sign in with the review code**.
+2. Conecto's sign-in page opens in your browser. At the bottom, under **Reviewing Conecto for the Cursor Marketplace or Grok Bot?**, type the review code from the submission in the **Review code** box and press **Sign in with the review code**.
 3. It opens Halverson Cycle & Repair, a sample bike shop with customers, deals, invoices, books, suppliers and their bills, staff and their time off, bookings, support tickets, help articles, forms, files, projects and stock. The account has prepaid credit, so paid tools run.
 4. Keep the ticked areas, or choose **Select all**, then **Allow**.
 
