@@ -83,6 +83,7 @@ Every error code and its fix: [conecto.chat/docs/errors.md](https://conecto.chat
 
 - Email [hello@conecto.chat](mailto:hello@conecto.chat), also for security reports ([security.txt](https://conecto.chat/.well-known/security.txt)).
 - Docs: [conecto.chat/docs](https://conecto.chat/docs)
+- Reviewing the plugin: [TESTING.md](TESTING.md)
 
 ## License
 
