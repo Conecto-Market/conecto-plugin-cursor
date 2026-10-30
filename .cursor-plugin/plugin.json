@@ -1,8 +1,8 @@
 {
   "name": "conecto",
   "displayName": "Conecto",
-  "version": "1.0.1",
-  "description": "Run a small business from Cursor: CRM, email inboxes, invoicing and bookkeeping, help desk, booking calendar, e-signatures, purchasing and HR as MCP tools. Sign in with Conecto, pay per call, no subscription.",
+  "version": "1.1.0",
+  "description": "Run a small business from your agent: CRM, email inboxes, invoicing and bookkeeping, help desk, booking calendar, e-signatures, purchasing and HR as MCP tools. Sign in with Conecto. The plugin is free, and Conecto bills each tool call to the business's prepaid balance.",
   "author": {
     "name": "Conecto",
     "email": "hello@conecto.chat"

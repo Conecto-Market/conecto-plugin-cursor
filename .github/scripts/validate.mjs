@@ -83,8 +83,21 @@ async function checkComponents(folder, required, extensions, label) {
 
 function pngSize(buffer) {
   const signature = '89504e470d0a1a0a'
-  if (buffer.length < 24 || buffer.subarray(0, 8).toString('hex') !== signature) return null
-  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) }
+  if (buffer.length < 26 || buffer.subarray(0, 8).toString('hex') !== signature) return null
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20), colorType: buffer[25] }
+}
+
+// The publish form asks for a 1:1 logo "with a background plate", so the PNG has no alpha channel and no tRNS chunk.
+function pngIsOpaque(buffer, colorType) {
+  if (colorType === 4 || colorType === 6) return false
+  for (let at = 8; at + 8 <= buffer.length;) {
+    const length = buffer.readUInt32BE(at)
+    const type = buffer.subarray(at + 4, at + 8).toString('latin1')
+    if (type === 'tRNS') return false
+    if (type === 'IDAT' || type === 'IEND') return true
+    at += 12 + length
+  }
+  return true
 }
 
 const manifest = await readJson('.cursor-plugin/plugin.json')
@@ -115,9 +128,11 @@ if (manifest) {
     }
   }
   if (typeof manifest.logo === 'string' && manifest.logo.endsWith('.png') && await exists(path.join(root, manifest.logo))) {
-    const size = pngSize(await fs.readFile(path.join(root, manifest.logo)))
+    const logo = await fs.readFile(path.join(root, manifest.logo))
+    const size = pngSize(logo)
     if (!size) fail(`${manifest.logo}: not a PNG file`)
     else if (size.width !== size.height) fail(`${manifest.logo}: the logo must be square, not ${size.width} x ${size.height}`)
+    else if (!pngIsOpaque(logo, size.colorType)) fail(`${manifest.logo}: the logo needs a background plate, with no transparent pixels`)
   }
 }
 
